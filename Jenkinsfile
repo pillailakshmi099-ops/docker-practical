@@ -12,7 +12,7 @@ pipeline{
     
     stage('Build a image'){
       steps{
-        bat 'docker build -t my-node-app . .'
+        bat 'docker build -t my-node-app .'
       }
     }
 
