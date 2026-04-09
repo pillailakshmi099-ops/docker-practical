@@ -12,7 +12,7 @@ pipeline{
     
     stage('Build a image'){
       steps{
-        bat 'docker build -t my-node-app .'
+        bat 'docker build -t my-app .'
       }
     }
 
@@ -24,7 +24,7 @@ pipeline{
 
     stage('Run the Container'){
       steps{
-        bat 'docker run -d -p 5050:3000 --name my-container my-node-app'
+        bat 'docker run -d -p 5050:3000 --name my-container my-app'
       }
     }
     
