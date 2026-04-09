@@ -24,7 +24,7 @@ pipeline{
 
     stage('Run the Container'){
       steps{
-        bat 'docker run -d -p 5050:3000 --name my-cont my-app'
+        bat 'docker run -d -p 5000:3000 --name my-cont my-app'
       }
     }
     
