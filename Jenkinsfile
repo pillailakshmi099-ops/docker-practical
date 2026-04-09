@@ -18,13 +18,13 @@ pipeline{
 
     stage('Remove old containers'){
       steps{
-        bat 'docker rm my-container || exit 0'
+        bat 'docker rm my-cont || exit 0'
           }
         }
 
     stage('Run the Container'){
       steps{
-        bat 'docker run -d -p 5050:3000 --name my-container my-app'
+        bat 'docker run -d -p 5050:3000 --name my-cont my-app'
       }
     }
     
