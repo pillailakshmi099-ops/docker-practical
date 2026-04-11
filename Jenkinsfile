@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/pillailakshmi099-ops/docker-practical.git', branch 'main'
+                git url: 'https://github.com/pillailakshmi099-ops/docker-practical.git', branch:'main'
             }
         }
 
