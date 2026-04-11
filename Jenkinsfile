@@ -23,7 +23,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8000:80 --name html-container my-html-app'
+                bat 'docker run -d -p 2000:80 --name html-container my-html-app'
             }
         }
     }
