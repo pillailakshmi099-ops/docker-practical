@@ -1,32 +1,30 @@
-pipeline{
-  agent any 
-  
-  stages
-  {
-    stage('Clone a repo'){
-      steps{
-        
-      git url:'https://github.com/pillailakshmi099-ops/docker-practical.git', branch:'main'
-      }
-    }
-    
-    stage('Build a image'){
-      steps{
-        bat 'docker build -t my-app .'
-      }
-    }
+pipeline {
+    agent any
 
-    stage('Remove old containers'){
-      steps{
-        bat 'docker rm -f my-cont || exit 0'
-          }
+    stages {
+
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/pillailakshmi099-ops/docker-practical.git', branch 'main'
+            }
         }
 
-    stage('Run the Container'){
-      steps{
-        bat 'docker run -d -p 5000:3000 --name my-cont my-app'
-      }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t my-html-app .'
+            }
+        }
+
+        stage('Remove Old Container') {
+            steps {
+                bat 'docker rm -f html-container || exit 0'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                bat 'docker run -d -p 8000:80 --name html-container my-html-app'
+            }
+        }
     }
-    
-  }
 }
