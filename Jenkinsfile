@@ -18,7 +18,7 @@ pipeline{
 
     stage('Remove old containers'){
       steps{
-        bat 'docker rm my-cont || exit 0'
+        bat 'docker rm -f my-cont || exit 0'
           }
         }
 
